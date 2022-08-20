@@ -125,7 +125,7 @@ elif choice == str("2"):
     usr5 = f"{username}"
     usr6= f"xxx{username}xxx"
     usr7= f"_-{username}-_"
-    usr7= f"-_{username}_-"
+    usr8= f"-_{username}_-"
 #=========================== email reserch per fisrtname and secondname ===========================
 
 mails = []
@@ -143,7 +143,8 @@ mails.append(f"{usr3}{host1}")
 mails.append(f"{usr4}{host1}")
 mails.append(f"{usr5}{host1}")
 mails.append(f"{usr6}{host1}")
-mails.append(f"{usr7}{host1}")
+mails.append(f"{usr8}{host1}")
+mails.append(f"{usr8}{host1}")
 
 #mail list host 2
 mails.append(f"{usr1}{host2}")
@@ -153,7 +154,7 @@ mails.append(f"{usr4}{host2}")
 mails.append(f"{usr5}{host2}")
 mails.append(f"{usr6}{host2}")
 mails.append(f"{usr7}{host2}")
-
+mails.append(f"{usr8}{host2}")
 
 #email checker
 for email in mails:
