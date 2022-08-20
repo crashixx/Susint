@@ -1,4 +1,4 @@
-# Code of Conduct - Cooked-Grabber
+# Code of Conduct - Susint
 
 ## Our Pledge
 
