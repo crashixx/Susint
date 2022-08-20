@@ -4,7 +4,7 @@ from selenium import webdriver
 from os import environ as env, path as _path, system as sys, getcwd
 from colorama import Fore
 from time import sleep
-from pystyle import Anime, Center, Colors, Colorate
+from pystyle import Anime, Center, Colors, Colorate, System
 from pypresence import Presence
 from win32con import FILE_ATTRIBUTE_HIDDEN
 from win32api import SetFileAttributes
@@ -115,7 +115,8 @@ if choice == str("1"):
     usr4= f"{name}_{firstname}"
     usr5 = f"{firstname}-{name}"
     usr6= f"{name}-{firstname}"
-    usr7= f"{name}{firstname}"
+    usr7= f"{name}{firstname}".replace(" ", "")
+    usr8= f"{name}{firstname}".replace(" ", "")
 elif choice == str("2"):
     usr1 = f"{username}"
     usr2= f"_{username}"
@@ -124,7 +125,7 @@ elif choice == str("2"):
     usr5 = f"{username}"
     usr6= f"xxx{username}xxx"
     usr7= f"_-{username}-_"
-
+    usr7= f"-_{username}_-"
 #=========================== email reserch per fisrtname and secondname ===========================
 
 mails = []
@@ -253,12 +254,19 @@ for social in socials:
     else:
         pass
 
+    res8 = get(social + usr8)
+    if res6.status_code == int(200):
+        working_socials.append(social + usr8)
+    else:
+        pass
+
+
 #=========================== website checker ===========================
 
 start_url = ["http://", "https://"]
-domains___a = [".fr", ".es", ".ma", ".uk", ".xyz", ".ga", ".ru", ".com", ".online",
+domains = [".fr", ".es", ".ma", ".uk", ".xyz", ".ga", ".ru", ".com", ".online",
 ".live", ".store", ".tech", ".site", ".website"]
-domains = [".xyz"]
+
 working_domains = []
 
 for s_url in start_url:
@@ -312,7 +320,13 @@ for s_url in start_url:
             working_domains.append(req7)
         except:
             pass 
-
+        
+        req8= s_url + usr8 + dm
+        try:
+            res8 = get(req8)
+            working_domains.append(req8)
+        except:
+            pass 
 #=========================== final output ===========================
 
 adress_phone = []
