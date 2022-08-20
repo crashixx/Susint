@@ -23,13 +23,6 @@ except:
 def clear():
     sys("cls")
 
-def Spinner():
-	l = ['|', '/', '-', '\\']
-	for i in l+l+l:
-		sys.stdout.write(f"""\r{y}[{b}#{y}]{w} Loading... {i}""")
-		sys.stdout.flush()
-		sleep(0.2)
-
 #=========================== silly vars ===========================
 #colors 
 y = Fore.MAGENTA
