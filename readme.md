@@ -27,7 +27,7 @@ Susint is a simple tool that allows you to search information using a first and 
 
 - step 3 : Follow the instructions that appear in the console
 ## Disclaimer 
-- This tool is for educational pupose only, [read code of conduct](https://github.com/crashixx/Susint/CODE_OF_CONDUCT.md).
+- This tool is for educational pupose only, please read [CODE OF CONDUCT](https://github.com/crashixx/Susint/blob/main/CODE_OF_CONDUCT.md) before use this tool.
 ## Authors
 
 - [@crashixx](https://www.github.com/crashixx)
