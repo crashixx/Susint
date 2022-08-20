@@ -14,6 +14,7 @@ Susint is a simple tool that allows you to search information using a first and 
 - Python 3.x 
 - Isitarealemail free api key (https://isitarealemail.com/)
 - Firefox installed
+- Geckodriver installed (in the same folder as Susint.py)
 - Modules: requests, selenium, colorama, pystyle, pypresence, win32con, win32api
 
 
