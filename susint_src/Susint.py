@@ -116,7 +116,7 @@ if choice == str("1"):
     usr5 = f"{firstname}-{name}"
     usr6= f"{name}-{firstname}"
     usr7= f"{name}{firstname}".replace(" ", "")
-    usr8= f"{name}{firstname}".replace(" ", "")
+    usr8= f"{firstname}{name}".replace(" ", "")
 elif choice == str("2"):
     usr1 = f"{username}"
     usr2= f"_{username}"
