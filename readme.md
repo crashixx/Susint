@@ -27,6 +27,11 @@ Susint is a simple tool that allows you to search information using a first and 
 - step 2 : ```python3 Susint.py (to run the code)```
 
 - step 3 : Follow the instructions that appear in the console
+
+## Coming soon 
+- Module system implementation
+- Json api key file
+
 ## Disclaimer 
 - This tool is for educational pupose only, please read [CODE OF CONDUCT](https://github.com/crashixx/Susint/blob/main/CODE_OF_CONDUCT.md) and [LISENCE](https://github.com/crashixx/Susint/blob/main/Susint_license) before use this tool.
 ## Authors
