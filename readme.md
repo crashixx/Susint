@@ -23,10 +23,15 @@ Susint is a simple tool that allows you to search information using a first and 
 ## Usage/Examples
 
 - step 1: ```start requirement.bat (for installing the modules)```
+- step 2:  Setup apikey like this  (api_keys.json):
+```json
+{
+    "mail_api": "ENTER YOUR API KEY HERE"
+}
+```
+- step 3 : ```python3 Susint.py (to run the code)```
 
-- step 2 : ```python3 Susint.py (to run the code)```
-
-- step 3 : Follow the instructions that appear in the console
+- step 4 : Follow the instructions that appear in the console
 
 ## Coming soon 
 - Module system implementation
