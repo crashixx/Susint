@@ -1,71 +1,32 @@
+from utils.plugin.susint_base import *
+from utils.mailchecker.mail_checker import *
+from utils.anuarychecker.anuarychecker import *
+from utils.socialchecker.socialcheker import *
+from utils.websitechecker.websitechecker import *
 
-from requests import get 
-from selenium import webdriver
-from os import environ as env, path as _path, system as sys, getcwd
-from colorama import Fore
-from time import sleep
-from pystyle import Anime, Center, Colors, Colorate, System
-from pypresence import Presence
-from win32con import FILE_ATTRIBUTE_HIDDEN
-from win32api import SetFileAttributes
-
-#=========================== rich presence ===========================
-
-try:
-    rpc = Presence("713734159574630420")
-    rpc.connect()
-    rpc.update(state="by crashixx",details=f"OSINT tool",large_image="logo_resize_")
-except:
-    pass
-
-#=========================== silly defs ===========================
-
-def clear():
-    sys("cls")
-
-#=========================== silly vars ===========================
-#colors 
-y = Fore.MAGENTA
-b = Fore.LIGHTBLACK_EX
-w = Fore.LIGHTWHITE_EX
-
-program_file = env["ProgramW6432"]
-program_file_2 = env["ProgramFiles"]
-program_file_x86 = env["ProgramFiles(x86)"]
-
-
-#mail api key go to (https://isitarealemail.com/) to create one for free
-api_key = "ENTER YOUR API KEY HERE"
-
-banner_pystyle= """
-███████╗██╗   ██╗███████╗██╗███╗   ██╗████████╗
-██╔════╝██║   ██║██╔════╝██║████╗  ██║╚══██╔══╝
-███████╗██║   ██║███████╗██║██╔██╗ ██║   ██║   
-╚════██║██║   ██║╚════██║██║██║╚██╗██║   ██║   
-███████║╚██████╔╝███████║██║██║ ╚████║   ██║   
-╚══════╝ ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝   """
-banner= f"""
-███████╗██╗   ██╗███████╗██╗███╗   ██╗████████╗
-██╔════╝██║   ██║██╔════╝██║████╗  ██║╚══██╔══╝
-███████╗██║   ██║███████╗██║██╔██╗ ██║   ██║   
-╚════██║██║   ██║╚════██║██║██║╚██╗██║   ██║   
-███████║╚██████╔╝███████║██║██║ ╚████║   ██║   
-╚══════╝ ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═══╝   ╚═╝   
-{b}============ github.com/crashixx =============\n""".replace('█', f'{b}█{y}')
-
+#=========================== rich prescence initialize ===========================
+rpc()
 #=========================== firefox checker ===========================
 
-if _path.exists(f"{program_file}\\Mozilla Firefox\\firefox.exe") == True:
+if os.path.exists(f"{program_file}\\Mozilla Firefox\\firefox.exe") == True:
     firefox_path = f"{program_file}\\Mozilla Firefox\\firefox.exe" 
-elif _path.exists(f"{program_file_x86}\\Mozilla Firefox\\firefox.exe") == True:
+elif os.path.exists(f"{program_file_x86}\\Mozilla Firefox\\firefox.exe") == True:
     firefox_path = f"{program_file_x86}\\Mozilla Firefox\\firefox.exe"
-elif _path.exists(f"{program_file_2}\\Mozilla Firefox\\firefox.exe") == True:
+elif os.path.exists(f"{program_file_2}\\Mozilla Firefox\\firefox.exe") == True:
     firefox_path = f"{program_file_2}\\Mozilla Firefox\\firefox.exe"
 else:
     clear()
     print(banner)
     firefox_path = input(f"{y}[{w}#{y}]{w}Le navigateur firefox n'est pas detecté !...\n{y}[{w}#{y}]{w}Est-il installé?\n=~=~=\n{y}[{w}#{y}]{w}Si oui entrez le chemin d'acces ici:\n>>>")
-    exit()
+    if firefox_path == "":
+        exit()
+    else:
+        pass
+
+#=========================== api keys scraper ===========================
+
+with open("api_keys.json", "r") as f:
+    api_keys = load(f)
 
 #=========================== user menu ===========================
 
@@ -79,8 +40,8 @@ print(f"""{y}[{b}+{y}]{w} Options:
 {y}[{w}01{y}]{w} Search by firstname & name                
 {y}[{w}02{y}]{w} Search by username
 =====""")
+
 choice = input(f"""\n{y}[{b}#{y}]{w} Choix: """)
-7
 if choice == str("1"):
     clear()
     print(banner)
@@ -105,6 +66,7 @@ opts.headless = True
 opts.binary = firefox_path
 driver = webdriver.Firefox(options=opts, executable_path=r'geckodriver.exe')
 SetFileAttributes(f"{getcwd()}\\geckodriver.log", FILE_ATTRIBUTE_HIDDEN)
+
 #=========================== possible username creator ===========================
 
 #firstname & name
@@ -125,80 +87,25 @@ elif choice == str("2"):
     usr5 = f"{username}"
     usr6= f"xxx{username}xxx"
     usr7= f"_-{username}-_"
-    usr8= f"-_{username}_-"
+    usr7= f"-_{username}_-"
+    usr8= f"{username}"*2
+
 #=========================== email reserch per fisrtname and secondname ===========================
 
-mails = []
 valid_mails = []
 
-#hostlist
-host1 = "@gmail.com"
-host2 = "@orange.fr"
-
-
-# mail list host 1
-mails.append(f"{usr1}{host1}")
-mails.append(f"{usr2}{host1}")
-mails.append(f"{usr3}{host1}")
-mails.append(f"{usr4}{host1}")
-mails.append(f"{usr5}{host1}")
-mails.append(f"{usr6}{host1}")
-mails.append(f"{usr8}{host1}")
-mails.append(f"{usr8}{host1}")
-
-#mail list host 2
-mails.append(f"{usr1}{host2}")
-mails.append(f"{usr2}{host2}")
-mails.append(f"{usr3}{host2}")
-mails.append(f"{usr4}{host2}")
-mails.append(f"{usr5}{host2}")
-mails.append(f"{usr6}{host2}")
-mails.append(f"{usr7}{host2}")
-mails.append(f"{usr8}{host2}")
-
-#email checker
-for email in mails:
-    response = get("https://isitarealemail.com/api/email/validate",params = {'email': email}, headers = {'Authorization': f"Bearer {api_key}" })
-
-    status = response.json()['status']
-    if status == "valid":
-        valid_mails.append(email)
-    elif status == "invalid":
-        pass
+mail_checker(usr1, usr2, usr3, usr4, usr5, usr6, usr7, usr8, api_keys, valid_mails)
 
 #=========================== adress & telf scraper ===========================
 
 adress = []
 nums = []
 if choice == str("1"):
-    driver.get(f"https://www.annuaire-inverse.mobi/pro/search?q={firstname}+{name}")
-elif choice == str("2"):
-    driver.get(f"https://www.annuaire-inverse.mobi/pro/search?q={username}")
-sleep(3)
+    usr = f"{firstname}+{name}"
+else:
+    usr = f"{username}"
 
-#adress scraper
-e=driver.find_elements_by_class_name("info")
-for x in e:
-    adress.append(x.text)
-
-#num scraper
-html = driver.page_source
-with open(f"page.html","w",encoding="utf-8-sig") as f:
-    f.write(str(html))
-    f.close()
-
-#read page.html
-with open('page.html', "r") as tf:
-    datafile = tf.readlines()
-    for line in datafile:
-        if '"colBtn"' in line:
-            characters = r"""<aclass="colBtnhref=>spanApelersanab:%&;/ """
-            num = ''.join( x for x in line if x not in characters)
-            nums.append(num)
-
-tf.close()
-driver.close()
-
+anuarychecker(driver, adress, nums, usr)
 
 #=========================== social scraper ===========================
 
@@ -207,127 +114,19 @@ socials = ["https://instagram.com/", "https://www.facebook.com/", "https://www.t
 "https://tenor.com/users/", "https://open.spotify.com/user/", "https://sourceforge.net/u/", "https://soundcloud.com/", "https://www.smule.com/", "https://scratch.mit.edu/users/", 
 "https://replit.com/@","https://raidforums.com/User-", "https://pypi.org/user/", "https://www.pinterest.com/", "https://onlyfans.com/", "https://imgur.com/user/", 
 "https://forum.hackthebox.eu/profile/", "https://www.github.com/"]
-
 working_socials = []
 
-
-for social in socials:
-
-    res1 = get(social + usr1)
-    if res1.status_code == int(200):
-        working_socials.append(social + usr1)
-    else:
-        pass
-
-    res2 = get(social + usr2)
-    if res2.status_code == int(200):
-        working_socials.append(social + usr2)
-    else:
-        pass
-
-    res3 = get(social + usr3)
-    if res3.status_code == int(200):
-        working_socials.append(social + usr3)
-    else:
-        pass
-
-    res4 = get(social + usr4)
-    if res4.status_code == int(200):
-        working_socials.append(social + usr4)
-    else:
-        pass
-
-    res5 = get(social + usr5)
-    if res5.status_code == int(200):
-        working_socials.append(social + usr5)
-    else:
-        pass
-
-    res6 = get(social + usr6)
-    if res6.status_code == int(200):
-        working_socials.append(social + usr6)
-    else:
-        pass
-
-    res7 = get(social + usr7)
-    if res6.status_code == int(200):
-        working_socials.append(social + usr7)
-    else:
-        pass
-
-    res8 = get(social + usr8)
-    if res6.status_code == int(200):
-        working_socials.append(social + usr8)
-    else:
-        pass
-
+socialchecker(socials, working_socials, usr1, usr2, usr3, usr4, usr5, usr6, usr7, usr8)
 
 #=========================== website checker ===========================
 
 start_url = ["http://", "https://"]
 domains = [".fr", ".es", ".ma", ".uk", ".xyz", ".ga", ".ru", ".com", ".online",
 ".live", ".store", ".tech", ".site", ".website"]
-
 working_domains = []
 
-for s_url in start_url:
-    for dm in domains:
-        
-        req1= s_url + usr1 + dm
-        try:
-            res1 = get(req1)
-            working_domains.append(req1)
-        except:
-            pass
-        
-        req2= s_url + usr2 + dm
-        try:
-            res2 = get(req2)
-            working_domains.append(req2)
-        except:
-            pass
-        
-        req3= s_url + usr3 + dm
-        try:
-            res3 = get(req3)
-            working_domains.append(req3)
-        except:
-            pass
-        
-        req4= s_url + usr4 + dm
-        try:
-            res4 = get(req4)
-            working_domains.append(req4)
-        except:
-            pass
+websitechecker(start_url, domains, working_domains, usr1, usr2, usr3, usr4, usr5, usr6, usr7, usr8)
 
-        req5= s_url + usr5 + dm
-        try:
-            res5 = get(req5)
-            working_domains.append(req5)
-        except:
-            pass
-        
-        req6= s_url + usr6 + dm
-        try:
-            res6 = get(req6)
-            working_domains.append(req6)
-        except:
-            pass
-
-        req7= s_url + usr7 + dm
-        try:
-            res7 = get(req7)
-            working_domains.append(req7)
-        except:
-            pass 
-        
-        req8= s_url + usr8 + dm
-        try:
-            res8 = get(req8)
-            working_domains.append(req8)
-        except:
-            pass 
 #=========================== final output ===========================
 
 adress_phone = []
