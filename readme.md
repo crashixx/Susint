@@ -5,6 +5,7 @@
 Susint is a simple tool that allows you to search information using a first and last name, or a username
 
 ## Features
+- Free api keys 
 - Find Phone number
 - Find Email
 - Find Socials (instagram...)
@@ -34,8 +35,7 @@ Susint is a simple tool that allows you to search information using a first and 
 - step 4 : Follow the instructions that appear in the console
 
 ## Coming soon 
-- Module system implementation
-- Json api key file
+- More search tools
 
 ## Disclaimer 
 - This tool is for personals and goods purposes only, please read [CODE OF CONDUCT](https://github.com/crashixx/Susint/blob/main/CODE_OF_CONDUCT.md) and [LISENCE](https://github.com/crashixx/Susint/blob/main/Susint_license) before use this tool.
