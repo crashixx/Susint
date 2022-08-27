@@ -18,14 +18,14 @@ Susint is a simple tool that allows you to search information using a first and 
 - Isitarealemail free api key (https://isitarealemail.com/)
 - Firefox installed
 - Geckodriver installed (in the same folder as Susint.py)
-- Modules: requests, selenium, colorama, pystyle, pypresence, win32con, win32api, bs4
+- Modules: requests, selenium, colorama, pystyle, pypresence, bs4
 
 
 
 
 ## Usage/Examples
 
-- step 1: ```start requirement.bat (for installing the modules)```
+- step 1: ```pip install -r requirements.txt (for installing the modules)```
 - step 2:  Setup apikey like this  (api_keys.json):
 ```json
 {
