@@ -9,14 +9,16 @@ Susint is a simple tool that allows you to search information using a first and 
 - Find Phone number
 - Find Email
 - Find Socials (instagram...)
+- Find death(s)
 - Find Website
+
 ## Requirement
 - Windows 10 OS only (win32, for x86, x86_64, and arm64 architectures)
 - Python 3.x 
 - Isitarealemail free api key (https://isitarealemail.com/)
 - Firefox installed
 - Geckodriver installed (in the same folder as Susint.py)
-- Modules: requests, selenium, colorama, pystyle, pypresence, win32con, win32api
+- Modules: requests, selenium, colorama, pystyle, pypresence, win32con, win32api, bs4
 
 
 
@@ -38,7 +40,7 @@ Susint is a simple tool that allows you to search information using a first and 
 - More search tools
 
 ## Disclaimer 
-- This tool is for personals and goods purposes only, please read [CODE OF CONDUCT](https://github.com/crashixx/Susint/blob/main/CODE_OF_CONDUCT.md) and [LISENCE](https://github.com/crashixx/Susint/blob/main/Susint_license) before use this tool.
+- This tool is for personals or educationals goods purposes only, please read [CODE OF CONDUCT](https://github.com/crashixx/Susint/blob/main/CODE_OF_CONDUCT.md) and [LISENCE](https://github.com/crashixx/Susint/blob/main/Susint_license) before use this tool.
 ## Authors
 
 - [@crashixx](https://www.github.com/crashixx)
