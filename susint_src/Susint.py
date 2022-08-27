@@ -35,7 +35,7 @@ def main():
 
     #=========================== user menu ===========================
 
-    sys("title Susint v1.0 - by crashixx")
+    sys("title Susint v1.1 - by crashixx")
     Anime.Fade(Center.Center(banner_pystyle), Colors.purple_to_blue, Colorate.Vertical, interval=1.5, enter=True)
 
     clear()
