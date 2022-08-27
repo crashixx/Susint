@@ -1,0 +1,7 @@
+bs4==0.0.1
+requests==2.27.1
+selenium==3.141.0
+colorama==0.4.4
+pystyle==2.0
+pypresence==4.2.1
+pypiwin32==223
