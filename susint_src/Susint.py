@@ -7,8 +7,10 @@ from utils.deathrecord.deathrecord import *
 
 
 def main():
+    
     #=========================== rich prescence initialize ===========================
     rpc()
+    
     #=========================== firefox checker ===========================
 
     if os.path.exists(f"{program_file}\\Mozilla Firefox\\firefox.exe") == True:
