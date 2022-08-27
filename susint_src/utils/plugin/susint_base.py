@@ -1,5 +1,5 @@
 import os 
-from os import environ as env, system as sys, getcwd
+from os import environ as env, system as sys, getcwd, name
 
 from requests import get 
 from selenium import webdriver
@@ -10,6 +10,7 @@ from pypresence import Presence
 from win32con import FILE_ATTRIBUTE_HIDDEN
 from win32api import SetFileAttributes
 from json import load
+from bs4 import BeautifulSoup
 
 #=========================== basic vars ===========================
 #colors 
@@ -17,6 +18,7 @@ y = Fore.MAGENTA
 b = Fore.LIGHTBLACK_EX
 w = Fore.LIGHTWHITE_EX
 
+#program file paths
 program_file = env["ProgramW6432"]
 program_file_2 = env["ProgramFiles"]
 program_file_x86 = env["ProgramFiles(x86)"]
@@ -52,6 +54,3 @@ def rpc():
 
 def clear():
     sys("cls")
-
-
-    
