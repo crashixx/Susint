@@ -1,4 +1,3 @@
-from stat import FILE_ATTRIBUTE_NO_SCRUB_DATA
 from utils.plugin.susint_base import *
 
 def deathrecorder(firstname, name, profile_found):
